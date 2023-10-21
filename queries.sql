@@ -2,28 +2,29 @@
 --EMPLOYEE-group's employee's depending on their job type. 
 SELECT COUNT(EMPID), TYPE
 FROM EMP
-GROUP BY TYPE
+GROUP BY TYPE;
 
 --MANAGER--list's manager's in order of their salary
 SELECT * FROM MNGR
-ORDER BY SALARY
+ORDER BY SALARY;
 
 
 --CUSTOMER--count customerID values are assoscaited with the worker employee id
 SELECT COUNT(CUSTOMERID), WRKR_EMPID
 FROM CUST
-GROUP BY WRKR_EMPID
+GROUP BY WRKR_EMPID;
 
 --TRANSACTION--group's transactions by customer id
 SELECT * FROM TRNSCT
-ORDER BY CUST_CUSTOMERID
+ORDER BY CUST_CUSTOMERID;
 
 --CLTHNG--find's item's priced over $100
-SELECT * FROM CLTHNG WHERE PRICE >100
+SELECT * FROM CLTHNG WHERE PRICE >100;
 
 --WORKER--list name of all workers
 SELECT name 
-FROM wrkr;
+FROM WRKR;
+
 
 --MANAGER--list the number of managers
 SELECT COUNT(*) AS number_of_managers 
@@ -31,7 +32,7 @@ FROM mngr;
 
 --SUPPLIER--list all supplier's supplying jeans
 SELECT suppliername 
-FROM supp 
+FROM SUPP 
 WHERE itemtype = 'Jeans';
 
 
@@ -40,7 +41,7 @@ WHERE itemtype = 'Jeans';
 SELECT WRKR.WRKR_EMPID, CUST.NAME, CUST.CUSTOMERID
 FROM WRKR
 INNER JOIN CUST
-ON WRKR.WRKR_EMPID = CUST.WRKR_EMPID
+ON WRKR.WRKR_EMPID = CUST.WRKR_EMPID;
 
 --SUPPLIER--
 SELECT SUPP.ITEMTYPE,CLTHNG.ITEMNUM, CLTHNG.DESIGN
@@ -66,17 +67,16 @@ GROUP BY s.suppliername;
 
 --CLOTHING--which clothing item has the highest price
 SELECT itemnum, price
-FROM clthng
-WHERE price = (SELECT MAX(price) FROM clthng);
+FROM CLTHNG
+WHERE price = (SELECT MAX(price) FROM CLTHNG);
 
 --EMPLOYEE/MANAGER--list of all employee's and their employee type
 SELECT e.empid, e.username, e.type
 FROM emp e;
 
 --TRANSACTION--list all transactions per item
-SELECT c.itemnum, c.design, c.price * c.quantity AS total_sales
-FROM clthng c;
-
+SELECT clthng_itemnum, trnsct_ccnumber, trnsct_customer_customerid
+FROM CLTH_TRANS;
 
 --SUPPLIER--supplier's who supply a specific type of item
 SELECT s.suppliername, s.itemtype
@@ -92,17 +92,17 @@ SELECT ct.trnsct_customer_customerid, COUNT(ct.trnsct_ccnumber) AS total_transac
 FROM clth_trans ct
 GROUP BY ct.trnsct_customer_customerid;
 
---CLOTHING,SUPPLIER,MANAGER--select all clothing design, supplier names and manager names and sort/display them by manager and supplier name
+--CLOTHING,SUPPLIER,MANAGER--select all clothing design, supplier names, and manager names and sort/display them by manager and supplier name
 SELECT 
     c.design AS "Clothing Design",
     s.suppliername AS "Supplier Name",
     m.name AS "Manager Name"
 FROM 
-    clthng c
+    CLTHNG c
 JOIN 
-    supp s ON c.supp_supplierid = s.supplierid AND c.supp_manager_empid = s.mngr_empid
+    SUPP s ON c.supp_supplierid = s.supplierid AND c.supp_manager_empid = s.mngr_empid
 JOIN 
-    mngr m ON s.mngr_empid = m.empid
+    MNGR m ON s.mngr_empid = m.empid
 ORDER BY 
     m.name, s.suppliername;
 
