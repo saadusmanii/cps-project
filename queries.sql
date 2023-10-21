@@ -91,3 +91,37 @@ WHERE NOT EXISTS (
 SELECT ct.trnsct_customer_customerid, COUNT(ct.trnsct_ccnumber) AS total_transactions
 FROM clth_trans ct
 GROUP BY ct.trnsct_customer_customerid;
+
+--CLOTHING,SUPPLIER,MANAGER--select all clothing design, supplier names and manager names and sort/display them by manager and supplier name
+SELECT 
+    c.design AS "Clothing Design",
+    s.suppliername AS "Supplier Name",
+    m.name AS "Manager Name"
+FROM 
+    clthng c
+JOIN 
+    supp s ON c.supp_supplierid = s.supplierid AND c.supp_manager_empid = s.mngr_empid
+JOIN 
+    mngr m ON s.mngr_empid = m.empid
+ORDER BY 
+    m.name, s.suppliername;
+
+--MANAGER,SUPPLIER--display suppliers and managers who sell 10 or more items
+SELECT 
+    s.suppliername AS "Supplier Name",
+    m.name AS "Manager Name",
+    COUNT(ct.clthng_itemnum) AS "Total Items Sold"
+FROM 
+    clth_trans ct
+JOIN 
+    clthng c ON ct.clthng_itemnum = c.itemnum AND ct.clthng_supplier_supplierid = c.supp_supplierid AND ct.clthng_supplier_manager_empid = c.supp_manager_empid
+JOIN 
+    supp s ON c.supp_supplierid = s.supplierid AND c.supp_manager_empid = s.mngr_empid
+JOIN 
+    mngr m ON s.mngr_empid = m.empid
+GROUP BY 
+    s.suppliername, m.name
+HAVING 
+    COUNT(ct.clthng_itemnum) > 10
+ORDER BY 
+    COUNT(ct.clthng_itemnum) DESC;
