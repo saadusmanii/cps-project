@@ -106,22 +106,20 @@ JOIN
 ORDER BY 
     m.name, s.suppliername;
 
---MANAGER,SUPPLIER--display suppliers and managers who sell 10 or more items
+--MANAGER,SUPPLIER--display suppliers and managers who sell 0 or more items
 SELECT 
     s.suppliername AS "Supplier Name",
     m.name AS "Manager Name",
-    COUNT(ct.clthng_itemnum) AS "Total Items Sold"
+    COUNT(c.itemnum) AS "Total Items Sold"
 FROM 
-    clth_trans ct
+    clthng c
 JOIN 
-    clthng c ON ct.clthng_itemnum = c.itemnum AND ct.clthng_supplier_supplierid = c.supp_supplierid AND ct.clthng_supplier_manager_empid = c.supp_manager_empid
-JOIN 
-    supp s ON c.supp_supplierid = s.supplierid AND c.supp_manager_empid = s.mngr_empid
+    supp s ON c.supp_supplierid = s.supplierid
 JOIN 
     mngr m ON s.mngr_empid = m.empid
 GROUP BY 
     s.suppliername, m.name
 HAVING 
-    COUNT(ct.clthng_itemnum) > 10
+    COUNT(c.itemnum) >= 0
 ORDER BY 
-    COUNT(ct.clthng_itemnum) DESC;
+    COUNT(c.itemnum) DESC;
