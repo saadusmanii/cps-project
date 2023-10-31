@@ -152,3 +152,26 @@ insert into cust values(35, 50, 9999998124, 'Andy Dang');
 insert into cust values(36, 49, 9999908524, 'Sarmad Sacasm');
 insert into cust values(37, 25, 9999996432, 'Anthony Carl');
 insert into cust values(38, 33, 9999909746, 'Kendall Roy');
+
+--TRNSCT--
+insert into trnsct values(4124657864535425, 18, 12);
+insert into trnsct values(7567839728576235, 19, 13);
+insert into trnsct values(3056930009020004, 20, 14);
+insert into trnsct values(1252352538679523, 21, 16);
+insert into trnsct values(7645768787675445, 22, 16);
+insert into trnsct values(6011981111111113, 23, 14);
+insert into trnsct values(3622720627166712, 24, 33);
+insert into trnsct values(6200000000000005, 25, 33);
+insert into trnsct values(6200000000000047, 26, 26);
+insert into trnsct values(5555050360000080, 27, 25);
+insert into trnsct values(4000000760000002, 28, 49);
+insert into trnsct values(4000004840008001, 29, 50);
+insert into trnsct values(4123910812741245, 30, 39);
+insert into trnsct values(3158710251516970, 31, 39);
+insert into trnsct values(1825013568123950, 32, 23);
+insert into trnsct values(8739652873581295, 33, 23);
+insert into trnsct values(1328571385928385, 34, 175);
+insert into trnsct values(8657890213658791, 35, 50);
+insert into trnsct values(8526357198357912, 36, 49);
+insert into trnsct values(7567923561323569, 37, 25);
+insert into trnsct values(7679576879457685, 38, 33);
