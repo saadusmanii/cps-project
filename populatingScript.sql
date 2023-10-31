@@ -98,7 +98,7 @@ insert into supp (supplierid, mngr_empid, suppliername, itemtype)values(48, 21,'
 insert into supp (supplierid, mngr_empid, suppliername, itemtype)values(23, 21,'TrendyStitch Apparel','Dresses');
 insert into supp (supplierid, mngr_empid, suppliername, itemtype)values(36, 48,'VelvetHues Boutique','Hoodies');
 insert into supp (supplierid, mngr_empid, suppliername, itemtype)values(68, 46,'StyleSavvy Designs','Blazers');
-insert into supp (supplierid, mngr_empid, suppliername, itemtype)values(48, 21,'FabricFinesse Fashion','Sweaters');
+insert into supp (supplierid, mngr_empid, suppliername, itemtype)values(50, 21,'FabricFinesse Fashion','Sweaters');
 insert into supp (supplierid, mngr_empid, suppliername, itemtype)values(63, 24,'CoutureCrafted Creations','Skirts');
 insert into supp (supplierid, mngr_empid, suppliername, itemtype)values(76, 18,'DenimDreams Inc.','Leggings');
 insert into supp (supplierid, mngr_empid, suppliername, itemtype)values(81, 44,'SilkSerenity Studios','Jumpsuits');
@@ -129,3 +129,26 @@ insert into clthng (itemnum, supp_supplierid, supp_manager_empid, price, quantit
 insert into clthng (itemnum, supp_supplierid, supp_manager_empid, price, quantity, design) values(20, 49, 43, 56, 30, 'Cargo Shorts');
 insert into clthng (itemnum, supp_supplierid, supp_manager_empid, price, quantity, design) values(21, 56, 30, 56, 30, 'Denim Overalls');
 insert into clthng (itemnum, supp_supplierid, supp_manager_empid, price, quantity, design) values(22, 56, 30, 56, 30, 'Corduroy Overalls');
+
+--CUST--
+insert into cust values(18, 12, 9999999999, 'Katie Marsh');
+insert into cust values(19, 13, 9999998600, 'Arman Aujla');
+insert into cust values(20, 14, 9999912003, 'Omar Malik');
+insert into cust values(21, 16, 9999912405, 'Hamza Qayumi');
+insert into cust values(22, 16, 9999982329, 'Bilal Shams');
+insert into cust values(23, 14, 9999912399, 'Aman Sandhu');
+insert into cust values(24, 33, 9999945021, 'Umair Alvi');
+insert into cust values(25, 33, 9999912942, 'Jashan Sandhu');
+insert into cust values(26, 26, 9999912942, 'Emilia Zachemski');
+insert into cust values(27, 25, 9999908612, 'Karla Smith');
+insert into cust values(28, 49, 9999924353, 'Muhammad Zafar');
+insert into cust values(29, 50, 9999950923, 'Danish Sheikh');
+insert into cust values(30, 39, 9999929523, 'Hammad Qadri');
+insert into cust values(31, 39, 9999909523, 'Ahmed Dawoud');
+insert into cust values(32, 23, 9999990962, 'Shakir Ahmed');
+insert into cust values(33, 23, 9999998523, 'Hassan Jung');
+insert into cust values(34, 49, 9999998234, 'Henry Liu');
+insert into cust values(35, 50, 9999998124, 'Andy Dang');
+insert into cust values(36, 49, 9999908524, 'Sarmad Sacasm');
+insert into cust values(37, 25, 9999996432, 'Anthony Carl');
+insert into cust values(38, 33, 9999909746, 'Kendall Roy');
