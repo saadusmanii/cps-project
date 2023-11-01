@@ -21,12 +21,12 @@ public class JdbcOracleConnectionTemplate
             Class.forName("oracle.jdbc.OracleDriver");
 
           // String dbURL1 = "jdbc:oracle:thin:username/password@oracle.scs.ryerson.ca:1521:orcl";  // that is school Oracle database and you can only use it in the labs
-            
-            String dbURL1 = "jdbc:oracle:thin:@localhost:1521:orcl";
+            String username = "jnally";
+            String password = "07055419";
+            String dbURL1 = "jdbc:oracle:thin:" + username + '/' + password + "@localhost:1521:orcl";
             /* This XE or local database that you installed on your laptop. 1521 is the default port for database, change according to what you used during installation. 
 			xe is the sid, change according to what you setup during installation. */
-			String username = "jnally";
-            String password = "07055419";
+
 			conn1 = DriverManager.getConnection(dbURL1, username, password);
             if (conn1 != null) 
             {
