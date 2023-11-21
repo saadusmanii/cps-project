@@ -6,21 +6,36 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class CreateTables {
-
-    public static void createAll(Connection conn) throws SQLException{
+public class CreateTables 
+{
+    public static void createAll(Connection conn) throws SQLException
+    {
+        //Create Clothing Table
         createClthngTable(conn);
+
+        //Create Customer Table
         createCustTable(conn);
+
+        //Create Employee Table
         createEmpTable(conn);
+
+        //Create Manager Table
         createMngrTable(conn);
+
+        //Create Supplier Table
         createSuppTable(conn);
+
+        //Create Transaction Table
         createTrnsctTable(conn);
+
+        //Create Worker Table
         createWrkrTable(conn);
+
+        //Alter Tables
         AlterTables(conn);
     }
- 
-    public static void createClthngTable(Connection conn) throws SQLException{
-
+    public static void createClthngTable(Connection conn) throws SQLException
+    {
         Statement stm1 = conn.createStatement();
         String query = "CREATE TABLE clthng ("
          +"itemnum INTEGER NOT NULL,"
@@ -43,7 +58,8 @@ public class CreateTables {
          stm2.close();
     }
 
-    public static void createCustTable(Connection conn) throws SQLException{
+    public static void createCustTable(Connection conn) throws SQLException
+    {
 
         Statement stm1 = conn.createStatement();
         String query  = "CREATE TABLE cust ("
@@ -65,7 +81,8 @@ public class CreateTables {
 
     }
 
-    public static void createEmpTable(Connection conn) throws SQLException{
+    public static void createEmpTable(Connection conn) throws SQLException
+    {
 
         Statement stm1  = conn.createStatement();
         String query = "CREATE TABLE emp("
@@ -85,7 +102,8 @@ public class CreateTables {
 
     }
 
-    public static void createMngrTable(Connection conn) throws SQLException{
+    public static void createMngrTable(Connection conn) throws SQLException
+    {
 
         Statement stm1 = conn.createStatement();
         String query = "CREATE TABLE mngr ("
@@ -114,7 +132,8 @@ public class CreateTables {
 
     }
 
-    public static void createSuppTable(Connection conn) throws SQLException{
+    public static void createSuppTable(Connection conn) throws SQLException
+    {
 
         Statement stm1 = conn.createStatement();
         String query = "CREATE TABLE supp ("
@@ -134,7 +153,8 @@ public class CreateTables {
         stm2.close();
     }
 
-    public static void createTrnsctTable(Connection conn) throws SQLException{
+    public static void createTrnsctTable(Connection conn) throws SQLException
+    {
 
         Statement stm1 = conn.createStatement();
         String query = "CREATE TABLE trnsct ("
@@ -155,7 +175,8 @@ public class CreateTables {
         stm2.close();
     }
 
-    public static void createWrkrTable(Connection conn) throws SQLException{
+    public static void createWrkrTable(Connection conn) throws SQLException
+    {
 
         Statement stm1 = conn.createStatement();
         String query = "CREATE TABLE wrkr ("
@@ -183,7 +204,8 @@ public class CreateTables {
         stm3.close();
     }
 
-    public static void AlterTables(Connection conn) throws SQLException{
+    public static void AlterTables(Connection conn) throws SQLException
+    {
         Statement stm1 = conn.createStatement();
         String query = """
         ALTER TABLE clthng

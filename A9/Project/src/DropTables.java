@@ -6,12 +6,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class DropTables {
-    
-    public static void DropAll(Connection conn) throws SQLException{
-
+public class DropTables 
+{
+    public static void DropAll(Connection conn) throws SQLException
+    {
         Statement stm1 = conn.createStatement();
-        try {
+        try 
+        {
             String[] dropStatements = {
                 "DROP TABLE EMP CASCADE CONSTRAINTS",
                 "DROP TABLE WRKR CASCADE CONSTRAINTS",
@@ -21,8 +22,8 @@ public class DropTables {
                 "DROP TABLE SUPP CASCADE CONSTRAINTS",
                 "DROP TABLE CLTHNG CASCADE CONSTRAINTS"
             };
-        
-            for (String dropStatement : dropStatements) {
+            for (String dropStatement : dropStatements) 
+            {
                 stm1.execute(dropStatement);
             }
         } catch (SQLException e) {
@@ -30,6 +31,5 @@ public class DropTables {
         } finally {
             stm1.close();
         }
-
-        }
+    }
 }
