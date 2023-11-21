@@ -13,16 +13,13 @@ public class Main {
  
        Class.forName("oracle.jdbc.driver.OracleDriver");
        Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@oracle.scs.ryerson.ca:1521:orcl","awort", "02081124");
-
        if(conn != null){
         System.out.println("Connected Succesfully");
        }
 
        Scanner scanner = new Scanner(System.in);
     
-
        //menu formatting
-
        while(true){
 
         System.out.println("********************************************");
@@ -43,24 +40,25 @@ public class Main {
         System.out.println("Tables Created Succesfully");
         }
 
-        if(input == "2"){
-            
+        if(input.equals("2")){
+        DropTables.DropAll(conn);
+        System.err.println("Tables Dropped Succesfully");    
         }
 
-        if(input == "3"){
-            
+        if(input.equals("3")){
+        PopulateTables.populateAll(conn);
+        System.out.println("Tables Populated Succesfully");    
         }
 
-        if(input == "4"){
-            
+        if(input.equals("4")){
+        QueryTables.queryAll(conn);  
         }
 
-        if(input == "5"){
-            
+        if(input.equals("5")){
+        conn.close();
+        System.err.println("Connection closed");
+        break;
         }
-
-
-
     }         
   }
 }
