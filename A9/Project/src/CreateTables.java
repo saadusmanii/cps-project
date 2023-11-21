@@ -38,13 +38,13 @@ public class CreateTables
     {
         Statement stm1 = conn.createStatement();
         String query = "CREATE TABLE clthng ("
-         +"itemnum INTEGER NOT NULL,"
-         +"supp_supplierid    INTEGER NOT NULL,"
-         +"supp_manager_empid INTEGER NOT NULL,"
-         +"price              NUMBER,"
-         +"quantity           INTEGER,"
-         +"design             VARCHAR2(40 CHAR)"
-         +")";
+        +"itemnum INTEGER NOT NULL,"
+        +"supp_supplierid    INTEGER NOT NULL,"
+        +"supp_manager_empid INTEGER NOT NULL,"
+        +"price              NUMBER,"
+        +"quantity           INTEGER,"
+        +"design             VARCHAR2(40 CHAR)"
+        +")";
 
         Statement stm2 = conn.createStatement();
         String query2 = "ALTER TABLE clthng"
@@ -52,15 +52,14 @@ public class CreateTables
         +"supp_supplierid,"
         +"supp_manager_empid )";
 
-         stm1.execute(query);
-         stm2.execute(query2);
-         stm1.close();
-         stm2.close();
+        stm1.execute(query);
+        stm2.execute(query2);
+        stm1.close();
+        stm2.close();
     }
 
     public static void createCustTable(Connection conn) throws SQLException
     {
-
         Statement stm1 = conn.createStatement();
         String query  = "CREATE TABLE cust ("
         +"customerid INTEGER NOT NULL,"
@@ -72,18 +71,15 @@ public class CreateTables
         Statement stm2 = conn.createStatement();
         String query2 = "ALTER TABLE cust ADD CONSTRAINT customer_pk PRIMARY KEY ( customerid,"
         +"wrkr_empid )";
-      
 
-         stm1.execute(query);
-         stm2.execute(query2);
-         stm1.close();
-         stm2.close();
-
+        stm1.execute(query);
+        stm2.execute(query2);
+        stm1.close();
+        stm2.close();
     }
 
     public static void createEmpTable(Connection conn) throws SQLException
     {
-
         Statement stm1  = conn.createStatement();
         String query = "CREATE TABLE emp("
         +"empid INTEGER NOT NULL,"
@@ -94,12 +90,11 @@ public class CreateTables
 
         Statement stm2 = conn.createStatement();
         String query2  = "ALTER TABLE emp ADD CONSTRAINT emp_pk PRIMARY KEY ( empid )";
-     
-         stm1.execute(query);
-         stm2.execute(query2);
-         stm1.close();
-         stm2.close();
 
+        stm1.execute(query);
+        stm2.execute(query2);
+        stm1.close();
+        stm2.close();
     }
 
     public static void createMngrTable(Connection conn) throws SQLException
@@ -122,7 +117,7 @@ public class CreateTables
 
         Statement stm3 = conn.createStatement();
         String query3 = "ALTER TABLE mngr ADD CONSTRAINT manager_pk PRIMARY KEY ( empid )";
-
+        
         stm1.execute(query);
         stm2.execute(query2);
         stm3.execute(query3);

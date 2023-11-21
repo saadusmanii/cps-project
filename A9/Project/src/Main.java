@@ -27,7 +27,6 @@ public class Main
        //menu formatting
       while(true)
       {
-
         System.out.println("\n********************************************");
         System.out.println("Welcome to the Retail Store DBMS Program");
         System.out.println("Please enter an input");
